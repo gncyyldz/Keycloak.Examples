@@ -1,9 +1,6 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Scalar.AspNetCore;
 using Shared;
 using Shared.Modals.Request;
-using Shared.Modals.Responses;
 using Shared.Services;
 using System.Net.Mime;
 using System.Text;

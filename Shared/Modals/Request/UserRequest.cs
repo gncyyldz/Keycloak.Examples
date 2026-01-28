@@ -21,5 +21,8 @@ namespace Shared.Modals.Request
 
         [JsonPropertyName("lastName")]
         public string LastName { get; set; }
+
+        [JsonPropertyName("customAttributes")]
+        public Dictionary<string, List<string>>? CustomAttributes { get; set; }
     }
 }

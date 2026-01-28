@@ -12,7 +12,7 @@ namespace Shared.Services
             {
                 ["grant_type"] = "client_credentials",
                 ["client_id"] = "restapi-playground",
-                ["client_secret"] = "TSQ7dhxgymeqxPunV18S3WQY6dmBY9Il"
+                ["client_secret"] = "7zIt8KLQ826RjG9nQ5ob5qiMNr1x6anU"
             };
             var content = new FormUrlEncodedContent(formData);
             var response = await httpClient.PostAsync("/realms/master/protocol/openid-connect/token", content);
