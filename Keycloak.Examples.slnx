@@ -1,6 +1,5 @@
 <Solution>
   <Project Path="Keycloak1.Client.Demo/Keycloak1.Client.Demo.csproj" />
-  <Project Path="Keycloak2.User.Demo/Keycloak2.User.Demo.csproj" Id="edb45fb7-df45-4a0f-989f-110c3ab86d20" />
   <Project Path="Keycloak3.Basic.Authentication.Demo/Keycloak3.Basic.Authentication.Demo.csproj" Id="61ab8aa8-01da-4e1b-9fde-a5c02e2d4612" />
   <Project Path="Shared/Shared.csproj" Id="8cfe99ab-2bd4-4881-89a2-646145c7b6cb" />
 </Solution>
