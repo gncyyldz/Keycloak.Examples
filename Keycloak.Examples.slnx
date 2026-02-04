@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="Keycloak3.Basic.Authentication.Demo/Keycloak3.Basic.Authentication.Demo.csproj" Id="61ab8aa8-01da-4e1b-9fde-a5c02e2d4612" />
+  <Project Path="Keycloak4.Browser.Flow.Authentication/Keycloak4.Browser.Flow.Authentication.csproj" Id="82a21265-c580-4996-a0a3-f30596470ad2" />
   <Project Path="Shared/Shared.csproj" Id="8cfe99ab-2bd4-4881-89a2-646145c7b6cb" />
 </Solution>
