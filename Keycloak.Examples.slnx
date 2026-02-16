@@ -1,4 +1,50 @@
 <Solution>
-  <Project Path="Keycloak1.Client.Demo/Keycloak1.Client.Demo.csproj" />
-  <Project Path="Shared/Shared.csproj" Id="8cfe99ab-2bd4-4881-89a2-646145c7b6cb" />
+  <Folder Name="/Custom Theme/">
+    <Project Path="Custom Theme/keycloak-login-theme/" Type="Website" DisplayName="keycloak-login-theme">
+      <BuildType Project="Debug" />
+      <Properties Name="WebsiteProperties">
+        <Property Name="Debug.AspNetCompiler.Debug" Value="&quot;True&quot;" />
+        <Property Name="Debug.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />
+        <Property Name="Debug.AspNetCompiler.ForceOverwrite" Value="&quot;true&quot;" />
+        <Property Name="Debug.AspNetCompiler.PhysicalPath" Value="&quot;Custom Theme\keycloak-login-theme\&quot;" />
+        <Property Name="Debug.AspNetCompiler.TargetPath" Value="&quot;PrecompiledWeb\localhost_56729\&quot;" />
+        <Property Name="Debug.AspNetCompiler.Updateable" Value="&quot;true&quot;" />
+        <Property Name="Debug.AspNetCompiler.VirtualPath" Value="&quot;/localhost_56729&quot;" />
+        <Property Name="Release.AspNetCompiler.Debug" Value="&quot;False&quot;" />
+        <Property Name="Release.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />
+        <Property Name="Release.AspNetCompiler.ForceOverwrite" Value="&quot;true&quot;" />
+        <Property Name="Release.AspNetCompiler.PhysicalPath" Value="&quot;Custom Theme\keycloak-login-theme\&quot;" />
+        <Property Name="Release.AspNetCompiler.TargetPath" Value="&quot;PrecompiledWeb\localhost_56729\&quot;" />
+        <Property Name="Release.AspNetCompiler.Updateable" Value="&quot;true&quot;" />
+        <Property Name="Release.AspNetCompiler.VirtualPath" Value="&quot;/localhost_56729&quot;" />
+        <Property Name="TargetFrameworkMoniker" Value="&quot;.NETFramework,Version%3Dv4.8&quot;" />
+        <Property Name="VWDPort" Value="&quot;56729&quot;" />
+      </Properties>
+    </Project>
+  </Folder>
+  <Folder Name="/SPA/">
+    <Project Path="SPA/Angular.API/Angular.API.csproj" />
+    <Project Path="SPA/Angular/" Type="Website" DisplayName="Angular">
+      <BuildType Project="Debug" />
+      <Properties Name="WebsiteProperties">
+        <Property Name="Debug.AspNetCompiler.Debug" Value="&quot;True&quot;" />
+        <Property Name="Debug.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />
+        <Property Name="Debug.AspNetCompiler.ForceOverwrite" Value="&quot;true&quot;" />
+        <Property Name="Debug.AspNetCompiler.PhysicalPath" Value="&quot;SPA\Angular\&quot;" />
+        <Property Name="Debug.AspNetCompiler.TargetPath" Value="&quot;PrecompiledWeb\localhost_59363\&quot;" />
+        <Property Name="Debug.AspNetCompiler.Updateable" Value="&quot;true&quot;" />
+        <Property Name="Debug.AspNetCompiler.VirtualPath" Value="&quot;/localhost_59363&quot;" />
+        <Property Name="Release.AspNetCompiler.Debug" Value="&quot;False&quot;" />
+        <Property Name="Release.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />
+        <Property Name="Release.AspNetCompiler.ForceOverwrite" Value="&quot;true&quot;" />
+        <Property Name="Release.AspNetCompiler.PhysicalPath" Value="&quot;SPA\Angular\&quot;" />
+        <Property Name="Release.AspNetCompiler.TargetPath" Value="&quot;PrecompiledWeb\localhost_59363\&quot;" />
+        <Property Name="Release.AspNetCompiler.Updateable" Value="&quot;true&quot;" />
+        <Property Name="Release.AspNetCompiler.VirtualPath" Value="&quot;/localhost_59363&quot;" />
+        <Property Name="TargetFrameworkMoniker" Value="&quot;.NETFramework,Version%3Dv4.8&quot;" />
+        <Property Name="VWDPort" Value="&quot;59363&quot;" />
+      </Properties>
+    </Project>
+  </Folder>
+  <Project Path="Keycloak4.Browser.Flow.Authentication/Keycloak4.Browser.Flow.Authentication.csproj" Id="82a21265-c580-4996-a0a3-f30596470ad2" />
 </Solution>

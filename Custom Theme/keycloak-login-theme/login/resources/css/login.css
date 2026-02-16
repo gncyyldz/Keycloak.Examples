@@ -1,0 +1,436 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Kayan Yıldızlar */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stars::before,
+.stars::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 
+        100px 200px rgba(255,255,255,0.8), 300px 150px rgba(255,255,255,0.9), 500px 300px rgba(255,255,255,0.7),
+        700px 100px rgba(255,255,255,0.8), 200px 400px rgba(255,255,255,0.9), 600px 250px rgba(255,255,255,0.7),
+        150px 100px rgba(255,255,255,0.8), 450px 350px rgba(255,255,255,0.9), 750px 200px rgba(255,255,255,0.7),
+        50px 300px rgba(255,255,255,0.8), 350px 50px rgba(255,255,255,0.9), 650px 400px rgba(255,255,255,0.7),
+        250px 250px rgba(255,255,255,0.8), 550px 150px rgba(255,255,255,0.9), 800px 350px rgba(255,255,255,0.7),
+        400px 450px rgba(255,255,255,0.8), 100px 500px rgba(255,255,255,0.9), 700px 450px rgba(255,255,255,0.7),
+        300px 550px rgba(255,255,255,0.8), 600px 100px rgba(255,255,255,0.9), 200px 150px rgba(255,255,255,0.7),
+        500px 500px rgba(255,255,255,0.8), 800px 250px rgba(255,255,255,0.9), 150px 350px rgba(255,255,255,0.7),
+        450px 200px rgba(255,255,255,0.8), 350px 400px rgba(255,255,255,0.9), 650px 300px rgba(255,255,255,0.7),
+        50px 450px rgba(255,255,255,0.8), 250px 100px rgba(255,255,255,0.9), 550px 450px rgba(255,255,255,0.7),
+        750px 350px rgba(255,255,255,0.8), 400px 100px rgba(255,255,255,0.9), 100px 250px rgba(255,255,255,0.7),
+        300px 350px rgba(255,255,255,0.8), 600px 500px rgba(255,255,255,0.9), 200px 300px rgba(255,255,255,0.7),
+        500px 200px rgba(255,255,255,0.8), 700px 400px rgba(255,255,255,0.9), 150px 450px rgba(255,255,255,0.7),
+        450px 300px rgba(255,255,255,0.8), 350px 200px rgba(255,255,255,0.9), 650px 150px rgba(255,255,255,0.7),
+        50px 200px rgba(255,255,255,0.8), 250px 450px rgba(255,255,255,0.9), 550px 350px rgba(255,255,255,0.7),
+        800px 150px rgba(255,255,255,0.8), 400px 550px rgba(255,255,255,0.9), 100px 350px rgba(255,255,255,0.7),
+        300px 100px rgba(255,255,255,0.8), 600px 350px rgba(255,255,255,0.9), 200px 500px rgba(255,255,255,0.7),
+        500px 400px rgba(255,255,255,0.8), 750px 500px rgba(255,255,255,0.9), 150px 250px rgba(255,255,255,0.7),
+        900px 300px rgba(255,255,255,0.8), 1000px 150px rgba(255,255,255,0.9), 1100px 400px rgba(255,255,255,0.7),
+        1200px 250px rgba(255,255,255,0.8), 1300px 500px rgba(255,255,255,0.9), 1400px 100px rgba(255,255,255,0.7),
+        1500px 350px rgba(255,255,255,0.8), 1600px 200px rgba(255,255,255,0.9), 1700px 450px rgba(255,255,255,0.7),
+        120px 180px rgba(255,255,255,0.8), 280px 320px rgba(255,255,255,0.9), 420px 480px rgba(255,255,255,0.7),
+        580px 120px rgba(255,255,255,0.8), 680px 380px rgba(255,255,255,0.9), 780px 220px rgba(255,255,255,0.7),
+        880px 520px rgba(255,255,255,0.8), 980px 280px rgba(255,255,255,0.9), 1080px 420px rgba(255,255,255,0.7),
+        1180px 180px rgba(255,255,255,0.8), 1280px 340px rgba(255,255,255,0.9), 1380px 480px rgba(255,255,255,0.7),
+        1480px 140px rgba(255,255,255,0.8), 1580px 380px rgba(255,255,255,0.9), 1680px 260px rgba(255,255,255,0.7),
+        90px 380px rgba(255,255,255,0.8), 190px 520px rgba(255,255,255,0.9), 290px 160px rgba(255,255,255,0.7),
+        390px 420px rgba(255,255,255,0.8), 490px 280px rgba(255,255,255,0.9), 590px 540px rgba(255,255,255,0.7),
+        690px 180px rgba(255,255,255,0.8), 790px 440px rgba(255,255,255,0.9), 890px 300px rgba(255,255,255,0.7),
+        990px 560px rgba(255,255,255,0.8), 1090px 220px rgba(255,255,255,0.9), 1190px 460px rgba(255,255,255,0.7),
+        1290px 140px rgba(255,255,255,0.8), 1390px 480px rgba(255,255,255,0.9), 1490px 340px rgba(255,255,255,0.7),
+        1590px 580px rgba(255,255,255,0.8), 1690px 240px rgba(255,255,255,0.9), 1790px 500px rgba(255,255,255,0.7),
+        130px 270px rgba(255,255,255,0.8), 330px 410px rgba(255,255,255,0.9), 530px 170px rgba(255,255,255,0.7),
+        730px 430px rgba(255,255,255,0.8), 830px 290px rgba(255,255,255,0.9), 930px 530px rgba(255,255,255,0.7),
+        1030px 190px rgba(255,255,255,0.8), 1130px 450px rgba(255,255,255,0.9), 1230px 310px rgba(255,255,255,0.7),
+        1330px 550px rgba(255,255,255,0.8), 1430px 210px rgba(255,255,255,0.9), 1530px 470px rgba(255,255,255,0.7),
+        1630px 330px rgba(255,255,255,0.8), 1730px 570px rgba(255,255,255,0.9), 1830px 230px rgba(255,255,255,0.7),
+        80px 490px rgba(255,255,255,0.8), 180px 350px rgba(255,255,255,0.9), 280px 210px rgba(255,255,255,0.7),
+        380px 470px rgba(255,255,255,0.8), 480px 330px rgba(255,255,255,0.9), 580px 510px rgba(255,255,255,0.7),
+        680px 190px rgba(255,255,255,0.8), 780px 450px rgba(255,255,255,0.9), 880px 310px rgba(255,255,255,0.7),
+        980px 530px rgba(255,255,255,0.8), 1080px 210px rgba(255,255,255,0.9), 1180px 470px rgba(255,255,255,0.7),
+        1280px 150px rgba(255,255,255,0.8), 1380px 490px rgba(255,255,255,0.9), 1480px 350px rgba(255,255,255,0.7),
+        1580px 590px rgba(255,255,255,0.8), 1680px 250px rgba(255,255,255,0.9), 1780px 510px rgba(255,255,255,0.7),
+        140px 360px rgba(255,255,255,0.8), 340px 500px rgba(255,255,255,0.9), 540px 260px rgba(255,255,255,0.7),
+        740px 520px rgba(255,255,255,0.8), 840px 380px rgba(255,255,255,0.9), 940px 240px rgba(255,255,255,0.7),
+        1040px 500px rgba(255,255,255,0.8), 1140px 360px rgba(255,255,255,0.9), 1240px 220px rgba(255,255,255,0.7),
+        1340px 480px rgba(255,255,255,0.8), 1440px 340px rgba(255,255,255,0.9), 1540px 200px rgba(255,255,255,0.7),
+        1640px 460px rgba(255,255,255,0.8), 1740px 320px rgba(255,255,255,0.9), 1840px 180px rgba(255,255,255,0.7),
+        70px 440px rgba(255,255,255,0.8), 270px 300px rgba(255,255,255,0.9), 470px 560px rgba(255,255,255,0.7),
+        670px 220px rgba(255,255,255,0.8), 870px 480px rgba(255,255,255,0.9), 1070px 340px rgba(255,255,255,0.7),
+        1270px 600px rgba(255,255,255,0.8), 1470px 260px rgba(255,255,255,0.9), 1670px 520px rgba(255,255,255,0.7),
+        110px 310px rgba(255,255,255,0.8), 310px 470px rgba(255,255,255,0.9), 510px 130px rgba(255,255,255,0.7),
+        710px 490px rgba(255,255,255,0.8), 910px 350px rgba(255,255,255,0.9), 1110px 210px rgba(255,255,255,0.7),
+        1310px 550px rgba(255,255,255,0.8), 1510px 270px rgba(255,255,255,0.9), 1710px 530px rgba(255,255,255,0.7),
+        160px 420px rgba(255,255,255,0.8), 360px 280px rgba(255,255,255,0.9), 560px 540px rgba(255,255,255,0.7),
+        760px 200px rgba(255,255,255,0.8), 960px 460px rgba(255,255,255,0.9), 1160px 320px rgba(255,255,255,0.7);
+    animation: starfall 60s linear infinite;
+}
+
+.stars::after {
+    width: 1px;
+    height: 1px;
+    animation-delay: -30s;
+}
+
+@keyframes starfall {
+    from {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Login Container */
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* TOTP için daha geniş container */
+.login-container:has(.totp-container) {
+    max-width: 900px;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Client Info */
+.client-info {
+    display: block;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    border-left: 3px solid rgba(255, 255, 255, 0.6);
+    margin: 0 0 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.client-message {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+    font-weight: 400;
+}
+
+.client-message strong {
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.login-content {
+    margin-bottom: 0;
+}
+
+/* Language Selector */
+.language-selector {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.language-selector a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.language-selector a:hover {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.language-selector a.active {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+/* Alert Messages */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.alert .icon {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.alert-success {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #22c55e;
+}
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.alert-warning {
+    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    color: #eab308;
+}
+
+.alert-info {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #3b82f6;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-help {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 8px 0 0 0;
+    line-height: 1.4;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+/* Cancel Link */
+.cancel {
+    display: block;
+    margin-top: 12px;
+    text-align: center;
+    color: #ef4444;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.cancel:hover {
+    color: #dc2626;
+    text-decoration: underline;
+}
+
+/* Form Actions */
+.form-actions {
+    margin-top: 24px;
+}
+
+/* TOTP Setup Layout */
+.totp-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.totp-qr-section,
+.totp-form-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.totp-qr-section h3,
+.totp-form-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.totp-instruction {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 20px 0;
+}
+
+.qr-code-wrapper {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.qr-code {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.manual-entry {
+    margin-top: 16px;
+}
+
+.secret-key {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 8px;
+}
+
+.secret-key code {
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+/* Responsive TOTP Layout */
+@media (max-width: 768px) {
+    .totp-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .login-box {
+        padding: 30px 20px;
+    }
+}
