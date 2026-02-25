@@ -1,4 +1,25 @@
 <Solution>
-  <Project Path="Keycloak1.Client.Demo/Keycloak1.Client.Demo.csproj" />
-  <Project Path="Shared/Shared.csproj" Id="8cfe99ab-2bd4-4881-89a2-646145c7b6cb" />
+  <Folder Name="/EmailThemes/">
+    <Project Path="EmailThemes/themes/" Type="Website" DisplayName="themes">
+      <BuildType Project="Debug" />
+      <Properties Name="WebsiteProperties">
+        <Property Name="Debug.AspNetCompiler.Debug" Value="&quot;True&quot;" />
+        <Property Name="Debug.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />
+        <Property Name="Debug.AspNetCompiler.ForceOverwrite" Value="&quot;true&quot;" />
+        <Property Name="Debug.AspNetCompiler.PhysicalPath" Value="&quot;EmailThemes\themes\&quot;" />
+        <Property Name="Debug.AspNetCompiler.TargetPath" Value="&quot;PrecompiledWeb\localhost_60002\&quot;" />
+        <Property Name="Debug.AspNetCompiler.Updateable" Value="&quot;true&quot;" />
+        <Property Name="Debug.AspNetCompiler.VirtualPath" Value="&quot;/localhost_60002&quot;" />
+        <Property Name="Release.AspNetCompiler.Debug" Value="&quot;False&quot;" />
+        <Property Name="Release.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />
+        <Property Name="Release.AspNetCompiler.ForceOverwrite" Value="&quot;true&quot;" />
+        <Property Name="Release.AspNetCompiler.PhysicalPath" Value="&quot;EmailThemes\themes\&quot;" />
+        <Property Name="Release.AspNetCompiler.TargetPath" Value="&quot;PrecompiledWeb\localhost_60002\&quot;" />
+        <Property Name="Release.AspNetCompiler.Updateable" Value="&quot;true&quot;" />
+        <Property Name="Release.AspNetCompiler.VirtualPath" Value="&quot;/localhost_60002&quot;" />
+        <Property Name="VWDPort" Value="&quot;60002&quot;" />
+      </Properties>
+    </Project>
+  </Folder>
+  <Project Path="Keycloak6.AspNETCore-İle-Refresh-Credentials-Flow-Örneği/Keycloak6.AspNETCore-İle-Refresh-Credentials-Flow-Örneği.csproj" Id="1d0ce774-3c9d-42b2-a487-295fc990dc97" />
 </Solution>
