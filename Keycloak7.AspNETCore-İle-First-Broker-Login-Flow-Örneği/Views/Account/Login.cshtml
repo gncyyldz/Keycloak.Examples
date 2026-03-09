@@ -1,0 +1,19 @@
+﻿@model LoginViewModel
+
+<div class="text-center mt-5">
+    <h3>Welcome</h3>
+
+    <form asp-action="Login" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+        <button type="submit" class="btn btn-primary">
+            Sign in with Keycloak
+        </button>
+    </form>
+    <br />
+    <form asp-action="LoginWithGoogle" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+        <button type="submit" class="btn btn-primary">
+            Sign in with Google
+        </button>
+    </form>
+</div>
