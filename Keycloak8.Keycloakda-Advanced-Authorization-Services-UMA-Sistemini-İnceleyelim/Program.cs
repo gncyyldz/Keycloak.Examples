@@ -1,4 +1,4 @@
-#define RPT_UMA_Authorization
+#define RPT_UMA_Custom_Authorization_Requirement
 
 
 
@@ -156,6 +156,62 @@ app.MapGet("/api/documents/{id}", (string id) =>
         accessedAt = DateTime.UtcNow
     });
 });
+
+app.Run();
+#elif RPT_UMA_Custom_Authorization_Requirement
+using Keycloak8.Keycloakda_Advanced_Authorization_Services_UMA_Sistemini_İnceleyelim.Handlers;
+using Keycloak8.Keycloakda_Advanced_Authorization_Services_UMA_Sistemini_İnceleyelim.Middlewares;
+using Keycloak8.Keycloakda_Advanced_Authorization_Services_UMA_Sistemini_İnceleyelim.Requirements;
+using Keycloak8.Keycloakda_Advanced_Authorization_Services_UMA_Sistemini_İnceleyelim.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<IAuthorizationHandler, UmaPermissionHandler>();
+builder.Services.AddSingleton<IAuthorizationMiddlewareResultHandler, UmaAuthorizationMiddlewareResultHandler>();
+builder.Services.AddSingleton<RptValidator>();
+builder.Services.AddSingleton<UmaTokenService>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+    {
+        options.Authority = builder.Configuration["Keycloak:Authority"];
+        options.Audience = builder.Configuration["Keycloak:ClientId"];
+        options.RequireHttpsMetadata = false;
+        options.TokenValidationParameters = new()
+        {
+            ValidateIssuer = true,
+            ValidateAudience = false,
+            ValidateLifetime = true
+        };
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("document:read", policy =>
+        policy.Requirements.Add(new UmaPermissionRequirement("Document Resource", "read")));
+
+    options.AddPolicy("document:write", policy =>
+        policy.Requirements.Add(new UmaPermissionRequirement("Document Resource", "write")));
+});
+
+
+var app = builder.Build();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapGet("/api/documents/{id}", (string id) =>
+{
+    //Buraya gelindiyse middleware RPT'yi doğrulamış demektir...
+    return Results.Ok(new
+    {
+        id,
+        title = "Document",
+        content = "Bu içerik UMA 2.0 ile korunmaktadır.",
+        accessedAt = DateTime.UtcNow
+    });
+}).RequireAuthorization(policyNames: "document:read");
 
 app.Run();
 #endif
